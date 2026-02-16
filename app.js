@@ -4,9 +4,15 @@ const sum = (a, b) => {
 
 // Tasas de conversión basadas en 1 Euro (EUR)
 let oneEuroIs = {
-    "JPY": 156.5, // yen japonés
-    "USD": 1.07,  // dólar estadounidense
-    "GBP": 0.87,  // libra esterlina
+    "JPY": 156.5,
+    "USD": 1.07,
+    "GBP": 0.87,
+}
+
+// NUEVA FUNCIÓN: De Euro a Dólar
+const fromEuroToDollar = function(valueInEuro) {
+    let valueInDollar = valueInEuro * oneEuroIs.USD;
+    return valueInDollar;
 }
 
 const fromDollarToYen = function(valueInDollar) {
@@ -21,5 +27,5 @@ const fromYenToPound = function(valueInYen) {
     return valueInPound;
 }
 
-// ESTA ES LA CLAVE: Exportar todo junto al final
-module.exports = { sum, fromDollarToYen, fromYenToPound };
+// Exportar todas las funciones (incluyendo la nueva)
+module.exports = { sum, fromEuroToDollar, fromDollarToYen, fromYenToPound };
